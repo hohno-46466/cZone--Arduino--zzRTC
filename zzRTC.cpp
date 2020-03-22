@@ -21,7 +21,7 @@
 
 zzRTC::zzRTC() {
 
-  // XXX20200320 // 未実装
+  // XXX20200320 // 未実装 // Not installed yet.
 
 }
 
@@ -32,7 +32,7 @@ zzRTC::zzRTC() {
 
 void zzRTC::begin() {
 
-  // XXX20200320 // 未実装
+  // XXX20200320 // 未実装 // Not installed yet.
 
 }
 
@@ -43,7 +43,7 @@ void zzRTC::begin() {
 
 uint8_t zzRTC::isrunning() {
 
-  // XXX20200320 // 未実装
+  // XXX20200320 // 未実装 // Not installed yet.
 
   return(0);
 }
@@ -80,7 +80,7 @@ boolean zzRTC::stopClock() {
 
 void zzRTC::setTime() {
 
-  // XXX20200320 // 未実装
+  // XXX20200320 // 未実装 // Not installed yet.
 
   _zzYear      = year;
   _zzMonth     = month;
@@ -98,7 +98,7 @@ void zzRTC::setTime() {
 
 void zzRTC::getTime() {
 
-  // XXX20200320 // 未実装
+  // XXX20200320 // 未実装 // Not installed yet.
 
 
   year      = _zzYear;
@@ -121,7 +121,7 @@ void zzRTC::getTime() {
 
 boolean zzRTC::fillByHMS(uint8_t HH, uint8_t MM, uint8_t SS) {
 
-  // XXX20200320 // 未実装
+  // XXX20200320 // 未実装 // Not installed yet.
 
     return(true);
 }
@@ -133,7 +133,7 @@ boolean zzRTC::fillByHMS(uint8_t HH, uint8_t MM, uint8_t SS) {
 
 boolean zzRTC::fillByY2kMD(uint16_t yy, uint8_t mm, uint8_t dd) {
 
-  // XXX20200320 // 未実装
+  // XXX20200320 // 未実装 // Not installed yet.
 
   return(true);
 }
