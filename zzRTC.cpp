@@ -12,7 +12,11 @@
 // ---------------------------------------------------------
 
 #include <Arduino.h>
+#include "myRTC.h"
 #include "zzRTC.h"
+
+static int g_RTCtype = RTC_TYPE_DUMMY;
+static boolean g_RTCstat = false;
 
 // =========================================================
 
@@ -32,7 +36,26 @@ zzRTC::zzRTC() {
 
 void zzRTC::begin() {
 
-  // XXX20200320 // 未実装 // Not installed yet.
+  // RTC の初期化
+  g_RTCtype = RTC_TYPE_DUMMY;
+  Serial.println(F("Debug: myRTC::RTCinit()"));
+  myRTC::RTCinit(g_RTCtype);
+
+  // myRTC::RTCsetup0() - 時刻設定なし
+  // myRTC::RTCsetup1() - 引数で時刻設定
+  // myRTC::RTCsetup2() - __DATE__, __TIME__ から時刻を設定
+  //
+  // Note: myRTC::settimeofday() is executed in the any of RTCsetup*()
+  //
+  int ret;
+  if ((ret = myRTC::RTCsetup2()) != 0) {
+    // RTC の設定に失敗した場合
+    Serial.print(F("Debug: myRTC::RTCsetup2() returned: "));
+    Serial.println(ret);
+    g_RTCstat = false;
+  } else {
+    g_RTCstat = true;
+  }
 
 }
 
@@ -43,9 +66,7 @@ void zzRTC::begin() {
 
 uint8_t zzRTC::isrunning() {
 
-  // XXX20200320 // 未実装 // Not installed yet.
-
-  return(0);
+  return(g_RTCstat);
 }
 
 // ---------------------------------------------------------
@@ -98,8 +119,13 @@ void zzRTC::setTime() {
 
 void zzRTC::getTime() {
 
-  // XXX20200320 // 未実装 // Not installed yet.
+  struct timeval tv = { 0, 0 };
+  uint32_t now_sec = 0;
 
+  // 年月日時分秒を取得
+  myRTC::gettimeofday(&tv, NULL);
+
+  // tv.tv_sec から _zz* を設定　  // XXX20200320 // 未実装 // Not installed yet.
 
   year      = _zzYear;
   month     = _zzMonth;
@@ -113,7 +139,7 @@ void zzRTC::getTime() {
 // ---------------------------------------------------------
 
 // ---------------------------------------------------------
-#ifdef BOGUS_BOGUS_zzRTC
+#ifdef BOGUS_BOGUS_ZZRTC
 // ---------------------------------------------------------
 
 // boolean zzRTC:fillByHMS:()
@@ -155,7 +181,7 @@ boolean zzRTC::fillDayOfWeek(int8_t wd) {
 }
 
 // ---------------------------------------------------------
-#endif // BOGUS_BOGUS_zzRTC
+#endif // BOGUS_BOGUS_ZZRTC
 // ---------------------------------------------------------
 
 // ---------------------------------------------------------
