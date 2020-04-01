@@ -3,7 +3,33 @@
 #
 
 # First version: Sun Mar 22 17:44:09 JST 2020 by @hohno_at_kuikmc
+# Last update: Wed Apr  1 09:16:54 JST 2020
 
 
 This version is still under development.
---
+
+zzRTC は，既存のDS1307クラスライブラリ（たくさんあると思うけどそのうちの一つ．詳細は後述）と同じクラス構造を持つ Arduino UNO 用のクラスライブラリ
+
+zzRTC は内部では myRTCクラスライブラリを使い（クラス継承ではなく普通にインスタンスを作って呼び出している）, DS1307 だけでなくそれ以外の時刻源も DS1307 にみせかけて利用可能にする．DS1307クラスライブラリを使っていたスケッチを zzRTC 対応にするには以下の2箇所を変更すればよい
+
+・オリジナルコード：
+
+#include "DS1307.h"
+    :
+DS1307  RTC;
+    :
+
+
+・zzRTCに変更後
+
+#include "zzRTC.h"
+    :
+zzRTC   RTC;
+    :
+
+
+以下のマクロを定義すると DS1307クラスライブラリと全く同じ public メンバが利用できるが，定義しないと必要最小限のメンバ構成となる．詳細は zzRTC.h を参照すること
+
+#define BOGUS_BOGUS_ZZRTC
+
+-EOF-
