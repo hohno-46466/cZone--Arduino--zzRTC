@@ -10,3 +10,4 @@
 .pioenvs
 .piolibdeps
 \#*.*
+*.swp
