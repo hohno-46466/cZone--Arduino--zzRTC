@@ -29,4 +29,6 @@ zzRTC.h と zzRTC.cpp は、内部で myRTC クラスを利用している（継
 すなわち、zzRTC は　DS1307クラスの身代わりとなって内部で myRTC クラスを呼び、myRTC クラスは zzRTC に対して様々な RTC を駆動して zzRTCを支えている。
 
 
+Note: 	url = https://github.com/hohno-46466/cZone--Arduino--zzRTC
+
 -EOF-
