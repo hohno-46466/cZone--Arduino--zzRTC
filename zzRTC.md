@@ -32,3 +32,4 @@ zzRTC.h と zzRTC.cpp は、内部で myRTC クラスを利用している（継
 Note: 	url = https://github.com/hohno-46466/cZone--Arduino--zzRTC
 
 -EOF-
+Note:   url = git@github.com:hohno-46466/cZone--Arduino--zzRTC.git
