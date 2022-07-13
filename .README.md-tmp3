@@ -1,21 +1,3 @@
-# GitHub/cZone--Arduino--zzRTC
-
-# zzRTC.md (README.md)
-
-    ./cZone--Arduino--zzRTC
-     ├──   README-old.md
-     ├──   README.md
-     ├──   README.md.old
-     ├──  examples/
-     │   └──  zzRTC_test/
-     │       └──   zzRTC_test.ino
-     ├──   zzRTC-memo.txt
-     ├──   zzRTC.cpp
-     ├──   zzRTC.h
-     └──   zzRTC.md
-     
-     2 directories, 8 files (Wed Jul 13 17:15:47 JST 2022)
-
 
 zzRTC.md (README.md)
 
