@@ -2,7 +2,7 @@
 
 # zzRTC.md (README.md)
 
-    ./cZone--Arduino--zzRTC/
+    ./cZone--Arduino--zzRTC
      ├──  README-old.md
      ├──  README.md
      ├──  README.md.old
@@ -14,7 +14,7 @@
      ├──  zzRTC.h
      └──  zzRTC.md
      
-     2 directories, 8 files (Tue Aug 30 13:17:42 JST 2022)
+     2 directories, 8 files (Sat Sep  3 17:32:43 JST 2022)
 
 
 zzRTC.md (README.md)
